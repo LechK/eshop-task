@@ -7,10 +7,16 @@ import { CartBox } from "..";
 function Header() {
   return (
     <S.Header>
-      <Link to="/">
-        <S.Logo src={barbora} alt="logo" />
-      </Link>
-      <CartBox />
+      <S.Container>
+        <S.LeftBlock>
+          <Link to="/">
+            <S.Logo src={barbora} alt="logo" />
+          </Link>
+        </S.LeftBlock>
+        <S.RightBlock>
+          <CartBox />
+        </S.RightBlock>
+      </S.Container>
     </S.Header>
   );
 }
