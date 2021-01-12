@@ -1,5 +1,5 @@
 import React from "react";
-import { Button, Section } from "../../components";
+import { Button, Section, ProductBox } from "../../components";
 import * as S from "./Home.style";
 
 // krepselis 340px width
@@ -9,7 +9,18 @@ function Home() {
     <S.Main>
       <S.Container>
         <S.LeftBlock>
-          <Button color="primary">Į krepšelį</Button>
+          <ProductBox />
+          <ProductBox />
+          <ProductBox />
+          <ProductBox />
+          <ProductBox />
+          <ProductBox />
+          <ProductBox />
+          <ProductBox />
+          <ProductBox />
+          <ProductBox />
+          <ProductBox />
+          <ProductBox />
         </S.LeftBlock>
         <S.RightBlock>
           <Button color="secondary">empty</Button>

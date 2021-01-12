@@ -5,16 +5,17 @@ export const Main = styled.div``;
 export const Container = styled.div`
   display: flex;
   justify-content: space-between;
-  align-items: center;
   max-width: 1340px;
-  min-height: 500px;
+  min-height: 100vh;
   margin: 0 auto;
 `;
 
 export const LeftBlock = styled.div`
-  border: 1px solid black;
-  min-height: 100vh;
   max-width: 1000px;
+  height: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
 `;
 
 export const RightBlock = styled.div`

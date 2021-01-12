@@ -1,8 +1,10 @@
 import styled from "styled-components";
 
 export const Button = styled.button`
-  width: 174px;
-  height: 40px;
+  width: 100%;
+  max-width: 174px;
+  padding: 1em;
+  margin-bottom: 1em;
   border: none;
   border-radius: ${(props) => (props.color === "primary" ? 25 : 3)}px;
   font-weight: 600;

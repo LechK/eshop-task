@@ -12,11 +12,10 @@ export const Container = styled.div`
   align-items: center;
   max-width: 1340px;
   margin: 0 auto;
-  border: 1px solid green;
 `;
 
 export const LeftBlock = styled.div`
-  border: 1px solid black;
+  padding-left: 1.3em;
 `;
 
 export const RightBlock = styled.div`
