@@ -9,19 +9,19 @@ const theme = {
   counter: "rgb(226, 46, 57)",
 
   primary: {
-    background: "#222222",
+    background: "#e22e39",
     color: "#ffffff",
     hover: {
-      background: "rgb(216,221,222)",
-      color: "#eeeeee",
+      background: "rgb(178, 47, 46)",
+      color: "#ffffff",
     },
   },
   secondary: {
-    background: "#333333",
-    color: "purple",
+    background: "rgb(246, 246, 248)",
+    color: "rgb(147, 147, 147)",
     hover: {
-      background: "green",
-      color: "cyan",
+      background: "rgb(216, 216, 218)",
+      color: "rgb(147, 147, 147)",
     },
   },
 };
