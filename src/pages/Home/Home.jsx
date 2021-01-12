@@ -1,13 +1,22 @@
 import React from "react";
 import { Button, Section } from "../../components";
+import * as S from "./Home.style";
+
+// krepselis 340px width
 
 function Home() {
   return (
-    <>
-      <Section>
-        <Button />
-      </Section>
-    </>
+    <S.Main>
+      <S.Container>
+        <S.LeftBlock>
+          <Button color="primary">Į krepšelį</Button>
+        </S.LeftBlock>
+        <S.RightBlock>
+          <Button color="secondary">empty</Button>
+        </S.RightBlock>
+      </S.Container>
+      <Section background="white"></Section>
+    </S.Main>
   );
 }
 
