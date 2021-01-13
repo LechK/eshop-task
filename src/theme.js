@@ -4,7 +4,7 @@ const theme = {
   dark: "rgb(41, 39, 43)",
   red: "#e22e39",
   grey: "#3b3b3b",
-  lightGrey: "rgb(222, 222, 222)",
+  lightGrey: "rgb(212, 212, 212)",
   cartBackground: "rgb(246, 246, 248)",
   counter: "rgb(226, 46, 57)",
 

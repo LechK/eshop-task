@@ -8,6 +8,7 @@ export const ProductBox = styled.div`
   border: 1px solid ${({ theme }) => theme.lightGrey};
   text-align: center;
   background-color: ${({ theme }) => theme.white};
+  padding: 0.5em;
 `;
 
 export const Favorite = styled.img`

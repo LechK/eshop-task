@@ -1,5 +1,5 @@
 import React from "react";
-import { Button, Section, ProductBox } from "../../components";
+import { Cart, Section, ProductBox } from "../../components";
 import * as S from "./Home.style";
 
 // krepselis 340px width
@@ -23,7 +23,7 @@ function Home() {
           <ProductBox />
         </S.LeftBlock>
         <S.RightBlock>
-          <Button color="secondary">empty</Button>
+          <Cart></Cart>
         </S.RightBlock>
       </S.Container>
       <Section background="white"></Section>
