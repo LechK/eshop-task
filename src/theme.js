@@ -3,7 +3,7 @@ const theme = {
   light: "rgb(248, 244, 241)",
   dark: "rgb(41, 39, 43)",
   red: "#e22e39",
-  grey: "rgb(87, 87, 87)",
+  grey: "#3b3b3b",
   lightGrey: "rgb(222, 222, 222)",
   cartBackground: "rgb(246, 246, 248)",
   counter: "rgb(226, 46, 57)",
