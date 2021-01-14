@@ -8,3 +8,4 @@ export { default as QuantityBlock } from "./QuantityBlock/QuantityBlock";
 export { default as Cart } from "./Cart/Cart";
 export { default as SideBar } from "./SideBar/SideBar";
 export { default as CloseButton } from "./CloseButton/CloseButton";
+export { default as ProductInCart } from "./ProductInCart/ProductInCart";

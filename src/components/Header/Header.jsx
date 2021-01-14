@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import * as S from "./Header.style";
 import barbora from "../../assets/barbora.jpg";
 import { Link } from "react-router-dom";
-import { CartBox, SideBar, Cart } from "../../components";
+import { CartBox, SideBar, Cart, ProductInCart } from "../../components";
 
 function Header() {
   const [open, setOpen] = useState(false);
@@ -27,7 +27,9 @@ function Header() {
         setOpen={setOpen}
         handleChange={() => setOpen(false)}
       >
-        <Cart />
+        <Cart>
+          <ProductInCart />
+        </Cart>
       </SideBar>
     </S.Header>
   );
