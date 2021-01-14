@@ -2,8 +2,6 @@ import React from "react";
 import { Cart, Section, ProductBox } from "../../components";
 import * as S from "./Home.style";
 
-// krepselis 340px width
-
 function Home() {
   return (
     <S.Main>

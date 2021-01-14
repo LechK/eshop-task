@@ -13,7 +13,6 @@ export const Cart = styled.div`
 export const Heading = styled.p`
   color: ${({ theme }) => theme.lightGrey};
   padding: 0.5em;
-  flex-grow: 1;
 `;
 
 export const BuyBlock = styled.div`

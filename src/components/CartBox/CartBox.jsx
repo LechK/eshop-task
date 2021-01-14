@@ -3,11 +3,11 @@ import * as S from "./CartBox.style";
 import cart from "../../assets/cart.svg";
 import basket from "../../assets/basket.svg";
 
-function CartBox({ className }) {
+function CartBox({ className, handleChange }) {
   switch (className) {
     case "mobile":
       return (
-        <S.Box>
+        <S.Box onClick={handleChange}>
           <S.Cart src={basket} />
           <S.Price>€2,08</S.Price>
         </S.Box>
