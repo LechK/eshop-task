@@ -1,5 +1,5 @@
 import React from "react";
-import { Cart, Section, ProductBox } from "../../components";
+import { Cart, Section, ProductBox, ProductInCart } from "../../components";
 import * as S from "./Home.style";
 
 function Home() {
@@ -21,7 +21,9 @@ function Home() {
           <ProductBox />
         </S.LeftBlock>
         <S.RightBlock>
-          <Cart></Cart>
+          <Cart>
+            <ProductInCart />
+          </Cart>
         </S.RightBlock>
       </S.Container>
       <Section background="white"></Section>

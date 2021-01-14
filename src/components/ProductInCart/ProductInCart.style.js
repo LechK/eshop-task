@@ -2,15 +2,19 @@ import styled from "styled-components";
 
 export const Box = styled.div`
   background-color: ${({ theme }) => theme.white};
-  min-width: 330px;
+  min-width: 310px;
   margin: 0.8em;
+  border-radius: 5px;
+  @media (min-width: 1061px) {
+    min-width: 300px;
+  }
 `;
 
 export const TrashBin = styled.img`
   max-height: 15px;
   position: absolute;
-  top: 10px;
-  right: 10px;
+  top: 1em;
+  right: 1em;
   cursor: pointer;
 `;
 
@@ -20,7 +24,7 @@ export const Product = styled.div`
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  padding-right: 20px;
+  padding-right: 1em;
 `;
 
 export const MidBlock = styled.div`
@@ -29,10 +33,11 @@ export const MidBlock = styled.div`
 `;
 
 export const Image = styled.img`
-  object-fit: contain;
+  object-fit: cover;
   height: 110px;
   @media (min-width: 1061px) {
-    height: 90px;
+    height: 60px;
+    max-width: 70px;
   }
   @media (max-width: 440px) {
     height: 70px;
@@ -58,11 +63,12 @@ export const Title = styled.p`
 export const ButtonBlock = styled.div`
   display: flex;
   justify-content: flex-start;
+  max-width: 150px;
 `;
 
 export const Price = styled.h2`
   color: ${({ theme }) => theme.red};
   font-weight: bold;
-  font-size: 1em;
-  margin-left: 1em;
+  font-size: 0.9em;
+  margin-left: 0.5em;
 `;

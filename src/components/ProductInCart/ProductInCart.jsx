@@ -16,7 +16,7 @@ function ProductInCart() {
           <S.Title>SMETONISKA duonos asdasda das dsa asgira, 2 l</S.Title>
           <S.ButtonBlock>
             <QuantityBlock />
-            <S.Price>€1,32</S.Price>
+            <S.Price>€555,32</S.Price>
           </S.ButtonBlock>
         </S.MidBlock>
       </S.Product>
