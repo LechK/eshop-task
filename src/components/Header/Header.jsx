@@ -22,7 +22,11 @@ function Header() {
           <CartBox />
         </S.RightBlock>
       </S.Container>
-      <SideBar open={open} setOpen={setOpen}>
+      <SideBar
+        open={open}
+        setOpen={setOpen}
+        handleChange={() => setOpen(false)}
+      >
         <Cart />
       </SideBar>
     </S.Header>

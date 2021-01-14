@@ -27,7 +27,7 @@ export const LeftBlock = styled.div`
 
 export const RightBlock = styled.div`
   width: 340px;
-  padding-right: 1em;
+  margin-right: 1em;
   height: 100%;
   position: absolute;
   display: block;

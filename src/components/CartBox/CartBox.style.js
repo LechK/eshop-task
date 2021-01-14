@@ -13,6 +13,7 @@ export const Box = styled.div`
   @media (max-width: 1060px) {
     border: none;
     justify-content: center;
+    cursor: pointer;
   }
 `;
 
