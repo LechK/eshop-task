@@ -14,8 +14,10 @@ function ProductBox() {
         />
         <S.Title>SMETONISKA duonos gira, 2 l</S.Title>
         <S.Price>€1,32</S.Price>
+        <S.ButtonBlock>
+          <Button color="primary">Į krepšelį</Button>
+        </S.ButtonBlock>
       </S.Product>
-      <Button color="primary">Į krepšelį</Button>
     </S.ProductBox>
   );
 }
