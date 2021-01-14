@@ -13,7 +13,10 @@ function Header() {
             <S.Logo src={barbora} alt="logo" />
           </Link>
         </S.LeftBlock>
-        <S.RightBlock>
+        <S.RightBlock className="mobile">
+          <CartBox className="mobile" />
+        </S.RightBlock>
+        <S.RightBlock className="fullscreen">
           <CartBox />
         </S.RightBlock>
       </S.Container>

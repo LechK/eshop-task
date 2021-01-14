@@ -10,17 +10,27 @@ export const Container = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  max-width: 1340px;
+  max-width: 1320px;
   margin: 0 auto;
 `;
 
-export const LeftBlock = styled.div`
-  padding-left: 1.3em;
-`;
+export const LeftBlock = styled.div``;
 
 export const RightBlock = styled.div`
-  width: 340px;
+  width: 350px;
   box-sizing: border-box;
+  display: flex;
+  justify-content: right;
+  @media (min-width: 1061px) {
+    &.mobile {
+      display: none;
+    }
+  }
+  @media (max-width: 1060px) {
+    &.fullscreen {
+      display: none;
+    }
+  }
 `;
 
 export const Logo = styled.img`
