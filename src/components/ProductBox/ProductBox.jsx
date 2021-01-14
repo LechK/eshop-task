@@ -3,17 +3,19 @@ import { Button } from "../../components";
 import * as S from "./ProductBox.style";
 import heart from "../../assets/heart.svg";
 
-function ProductBox() {
+function ProductBox({ name, price, image }) {
+  const formatted =
+    price.toString().length < 3
+      ? `0,${price}`
+      : price.toString().replace(/\B(?=(\d{2})+(?!\d))/g, ",");
+
   return (
     <S.ProductBox>
       <S.Product>
         <S.Favorite src={heart} alt="heart" />
-        <S.Image
-          src="https://pagrindinis.barbora.lt/api/images/GetInventoryImage?id=80b036cb-5250-4240-8a4f-d3ce468dbe5e"
-          alt="image"
-        />
-        <S.Title>SMETONISKA duonos gira, 2 l</S.Title>
-        <S.Price>€1,32</S.Price>
+        <S.Image src={image} alt="product" />
+        <S.Title>{name}</S.Title>
+        <S.Price>€{formatted}</S.Price>
         <S.ButtonBlock>
           <Button color="primary">Į krepšelį</Button>
         </S.ButtonBlock>

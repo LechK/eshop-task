@@ -1,5 +1,6 @@
 import React from "react";
 import { Cart, Section, ProductBox, ProductInCart } from "../../components";
+import products from "../../utils/products";
 import * as S from "./Home.style";
 
 function Home() {
@@ -7,18 +8,17 @@ function Home() {
     <S.Main>
       <S.Container>
         <S.LeftBlock>
-          <ProductBox />
-          <ProductBox />
-          <ProductBox />
-          <ProductBox />
-          <ProductBox />
-          <ProductBox />
-          <ProductBox />
-          <ProductBox />
-          <ProductBox />
-          <ProductBox />
-          <ProductBox />
-          <ProductBox />
+          {products &&
+            products.map((product) => {
+              return (
+                <ProductBox
+                  key={product.id}
+                  name={product.name}
+                  price={product.price}
+                  image={product.image}
+                />
+              );
+            })}
         </S.LeftBlock>
         <S.RightBlock>
           <Cart>
