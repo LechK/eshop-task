@@ -3,20 +3,31 @@ import * as S from "./ProductInCart.style";
 import trashBin from "../../assets/trashBin.svg";
 import { QuantityBlock } from "../../components";
 
-function ProductInCart() {
+function ProductInCart({
+  id,
+  name,
+  price,
+  image,
+  value,
+  handleChange,
+  handleDecrease,
+  handleIncrease,
+}) {
   return (
     <S.Box>
-      <S.Product>
+      <S.Product id={id}>
         <S.TrashBin src={trashBin} alt="heart" />
-        <S.Image
-          src="https://pagrindinis.barbora.lt/api/images/GetInventoryImage?id=80b036cb-5250-4240-8a4f-d3ce468dbe5e"
-          alt="image"
-        />
+        <S.Image src={image} alt="product" />
         <S.MidBlock>
-          <S.Title>SMETONISKA duonos asdasda das dsa asgira, 2 l</S.Title>
+          <S.Title>{name}</S.Title>
           <S.ButtonBlock>
-            <QuantityBlock />
-            <S.Price>€555,32</S.Price>
+            <QuantityBlock
+              value={value}
+              handleChange={handleChange}
+              handleDecrease={handleDecrease}
+              handleIncrease={handleIncrease}
+            />
+            <S.Price>€{price}</S.Price>
           </S.ButtonBlock>
         </S.MidBlock>
       </S.Product>

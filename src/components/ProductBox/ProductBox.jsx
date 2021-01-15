@@ -14,7 +14,7 @@ function ProductBox({ id, name, price, image }) {
 
   return (
     <S.ProductBox>
-      <S.Product id={id}>
+      <S.Product>
         <S.Favorite src={heart} alt="heart" />
         <S.Image src={image} alt="product" />
         <S.Title>{name}</S.Title>
