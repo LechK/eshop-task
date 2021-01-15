@@ -13,7 +13,8 @@ export const Cart = styled.div`
 
 export const Heading = styled.p`
   color: ${({ theme }) => theme.lightGrey};
-  padding: 0.5em;
+  padding: 0.5em 0.7em;
+  padding-bottom: 0;
 `;
 
 export const BuyBlock = styled.div`

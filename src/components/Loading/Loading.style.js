@@ -10,6 +10,7 @@ export const Wrapper = styled.div`
   background-color: rgba(216, 221, 222);
   justify-content: center;
   align-items: center;
+  z-index: 5;
 `;
 
 export const Loading = styled.div`

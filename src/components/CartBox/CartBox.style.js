@@ -43,6 +43,6 @@ export const Counter = styled.div`
   border: 2px solid ${({ theme }) => theme.white};
   position: absolute;
   top: 2px;
-  left: 1.8em;
+  left: 1.4em;
   z-index: 1;
 `;
