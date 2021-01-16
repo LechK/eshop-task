@@ -18,6 +18,17 @@ export const CartProvider = ({ children }) => {
     [products]
   );
 
+  const setQuantity = useCallback(
+    (quantity, id) => {
+      const newProducts = { ...products };
+      if (newProducts[id]) {
+        newProducts[id].quantity = quantity;
+      }
+      setProducts(newProducts);
+    },
+    [products]
+  );
+
   const decrease = useCallback(
     (id) => {
       const newProducts = { ...products };
@@ -59,6 +70,7 @@ export const CartProvider = ({ children }) => {
         decrease,
         deleteProduct,
         totalAmount,
+        setQuantity,
       }}
     >
       {children}

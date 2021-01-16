@@ -5,7 +5,7 @@ import heart from "../../assets/heart.svg";
 import { CartContext } from "../../contexts/cart.context";
 
 function ProductBox({ id, name, price, image }) {
-  const { increase, products, decrease } = useContext(CartContext);
+  const { increase, products, decrease, setQuantity } = useContext(CartContext);
 
   const onAddToCart = useCallback(() => {
     increase(id, { name, price, image });
@@ -14,6 +14,10 @@ function ProductBox({ id, name, price, image }) {
   const onRemoveFromCart = useCallback(() => {
     decrease(id);
   }, [id, decrease]);
+
+  function changeInputValue(quantity) {
+    setQuantity(quantity, id);
+  }
 
   return (
     <S.ProductBox>
@@ -25,7 +29,7 @@ function ProductBox({ id, name, price, image }) {
         <S.ButtonBlock>
           {products[id] ? (
             <QuantityBlock
-              handleChange={(e) => console.log(e.target.value)}
+              handleChange={(e) => changeInputValue(e.target.value)}
               handleIncrease={onAddToCart}
               handleDecrease={onRemoveFromCart}
               value={products[id].quantity}

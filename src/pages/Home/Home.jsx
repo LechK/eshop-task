@@ -5,14 +5,22 @@ import * as S from "./Home.style";
 import { CartContext } from "../../contexts/cart.context";
 
 function Home() {
-  const { products, increase, decrease, deleteProduct } = useContext(
-    CartContext
-  );
+  const {
+    products,
+    increase,
+    decrease,
+    deleteProduct,
+    setQuantity,
+  } = useContext(CartContext);
 
   function renderProduct(id, productInCart) {
     const product = productList.find((product) => {
       return product.id === parseInt(id);
     });
+
+    function changeInputValue(quantity) {
+      setQuantity(quantity, id);
+    }
 
     const price = product.price * productInCart.quantity;
 
@@ -23,7 +31,7 @@ function Home() {
         price={price.toFixed(2)}
         image={product.image}
         value={productInCart.quantity}
-        handleChange={(e) => console.log(e.target.value)}
+        handleChange={(e) => changeInputValue(e.target.value)}
         handleDecrease={() => decrease(id)}
         handleIncrease={() => increase(id, product)}
         handleDelete={() => deleteProduct(id)}
