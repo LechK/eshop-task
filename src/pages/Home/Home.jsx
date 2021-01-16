@@ -14,14 +14,16 @@ function Home() {
       return product.id === parseInt(id);
     });
 
-    // console.log(productList);
-    // console.log(productInCart);
-
+    const price = product.price * productInCart.quantity;
     return (
       <ProductInCart
         key={id}
         name={product.name}
-        price={product.price * productInCart.quantity}
+        price={
+          price.toString().length < 3
+            ? `0,${price}`
+            : price.toString().replace(/\B(?=(\d{2})+(?!\d))/g, ",")
+        }
         image={product.image}
         value={productInCart.quantity}
         handleChange={() => console.log("changed")}
