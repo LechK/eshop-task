@@ -8,14 +8,16 @@ function QuantityBlock({
   handleDecrease,
 }) {
   return (
-    <S.InputBlock>
-      <S.DecreaseButton onClick={handleDecrease}>-</S.DecreaseButton>
-      <S.InputBox>
-        <S.Input value={value} onChange={handleChange} />
-        vnt.
-      </S.InputBox>
-      <S.IncreaseButton onClick={handleIncrease}>+</S.IncreaseButton>
-    </S.InputBlock>
+    <S.Wrapper>
+      <S.InputBlock>
+        <S.DecreaseButton onClick={handleDecrease}>-</S.DecreaseButton>
+        <S.InputBox>
+          <S.Input value={value} onChange={handleChange} />
+          vnt.
+        </S.InputBox>
+        <S.IncreaseButton onClick={handleIncrease}>+</S.IncreaseButton>
+      </S.InputBlock>
+    </S.Wrapper>
   );
 }
 

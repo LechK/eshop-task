@@ -8,9 +8,13 @@ import { CartContext } from "../../contexts/cart.context";
 
 function Header() {
   const [open, setOpen] = useState(false);
-  const { products, increase, decrease, deleteProduct } = useContext(
-    CartContext
-  );
+  const {
+    products,
+    increase,
+    decrease,
+    deleteProduct,
+    totalAmount,
+  } = useContext(CartContext);
 
   function renderProduct(id, productInCart) {
     const product = productList.find((product) => {
@@ -31,7 +35,7 @@ function Header() {
         value={productInCart.quantity}
         handleChange={() => console.log("changed")}
         handleDecrease={() => decrease(id)}
-        handleIncrease={() => increase(id)}
+        handleIncrease={() => increase(id, product)}
         handleDelete={() => deleteProduct(id)}
       />
     );
@@ -45,10 +49,17 @@ function Header() {
           </Link>
         </S.LeftBlock>
         <S.RightBlock className="mobile">
-          <CartBox className="mobile" handleChange={() => setOpen(true)} />
+          <CartBox
+            className="mobile"
+            handleChange={() => setOpen(true)}
+            total={totalAmount().toFixed(2)}
+          />
         </S.RightBlock>
         <S.RightBlock className="fullscreen">
-          <CartBox counter={Object.keys(products).length} />
+          <CartBox
+            counter={Object.keys(products).length}
+            total={totalAmount().toFixed(2)}
+          />
         </S.RightBlock>
       </S.Container>
       <SideBar
