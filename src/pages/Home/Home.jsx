@@ -5,7 +5,9 @@ import * as S from "./Home.style";
 import { CartContext } from "../../contexts/cart.context";
 
 function Home() {
-  const { products, increase, decrease } = useContext(CartContext);
+  const { products, increase, decrease, deleteProduct } = useContext(
+    CartContext
+  );
 
   function renderProduct(id, productInCart) {
     const product = productList.find((product) => {
@@ -22,9 +24,10 @@ function Home() {
         price={product.price * productInCart.quantity}
         image={product.image}
         value={productInCart.quantity}
-        handleChange={() => console.log(products)}
+        handleChange={() => console.log("changed")}
         handleDecrease={() => decrease(id)}
         handleIncrease={() => increase(id)}
+        handleDelete={() => deleteProduct(id)}
       />
     );
   }

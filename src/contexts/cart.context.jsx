@@ -4,6 +4,7 @@ export const CartContext = createContext();
 
 export const CartProvider = ({ children }) => {
   const [products, setProducts] = useState({});
+
   const increase = useCallback(
     (id) => {
       const newProducts = { ...products };
@@ -32,8 +33,21 @@ export const CartProvider = ({ children }) => {
     [products]
   );
 
+  const deleteProduct = useCallback(
+    (id) => {
+      const newProducts = { ...products };
+      if (newProducts[id]) {
+        delete newProducts[id];
+      }
+      setProducts(newProducts);
+    },
+    [products]
+  );
+
   return (
-    <CartContext.Provider value={{ products, increase, decrease }}>
+    <CartContext.Provider
+      value={{ products, increase, decrease, deleteProduct }}
+    >
       {children}
     </CartContext.Provider>
   );

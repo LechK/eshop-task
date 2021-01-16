@@ -12,11 +12,12 @@ function ProductInCart({
   handleChange,
   handleDecrease,
   handleIncrease,
+  handleDelete,
 }) {
   return (
     <S.Box>
       <S.Product id={id}>
-        <S.TrashBin src={trashBin} alt="heart" />
+        <S.TrashBin src={trashBin} alt="heart" onClick={handleDelete} />
         <S.Image src={image} alt="product" />
         <S.MidBlock>
           <S.Title>{name}</S.Title>
