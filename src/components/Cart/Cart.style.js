@@ -1,12 +1,17 @@
 import styled from "styled-components";
 
+export const Wrapper = styled.div`
+  -webkit-box-shadow: 0px 1px 5px 1px ${({ theme }) => theme.lightGrey};
+  box-shadow: 0px 1px 5px 1px ${({ theme }) => theme.lightGrey};
+`;
+
 export const Cart = styled.div`
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
   background-color: ${({ theme }) => theme.cartBackground};
   min-height: 100vh;
-  height: 100%;
+  height: fit-content;
   -webkit-box-shadow: 0px 1px 5px 1px ${({ theme }) => theme.lightGrey};
   box-shadow: 0px 1px 5px 1px ${({ theme }) => theme.lightGrey};
 `;
@@ -23,8 +28,6 @@ export const BuyBlock = styled.div`
   padding: 2em;
   box-sizing: border-box;
   justify-content: space-between;
-
-  position: absolute;
   bottom: 0;
   width: 100%;
 `;

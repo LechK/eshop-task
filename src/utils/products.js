@@ -11,7 +11,7 @@ const products = [
     image:
       "https://pagrindinis.barbora.lt/api/images/GetInventoryImage?id=6b46f18d-f014-456c-aef6-551f154eebdc",
     name: "Sauskelnės MOONY NATURAL S (4-8 kg), 58 vnt.",
-    price: 2899,
+    price: 1199,
   },
   {
     id: 3,

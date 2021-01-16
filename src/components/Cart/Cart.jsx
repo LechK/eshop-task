@@ -4,9 +4,11 @@ import { Button } from "../../components";
 
 function Cart({ children }) {
   return (
-    <S.Cart>
-      <S.Heading>Krepšelis</S.Heading>
-      {children}
+    <S.Wrapper>
+      <S.Cart>
+        <S.Heading>Krepšelis</S.Heading>
+        {children}
+      </S.Cart>
       <S.BuyBlock>
         <Button>Pirkti</Button>
         <S.FullPrice>
@@ -16,7 +18,7 @@ function Cart({ children }) {
           <S.Price>€2.08</S.Price>
         </S.FullPrice>
       </S.BuyBlock>
-    </S.Cart>
+    </S.Wrapper>
   );
 }
 

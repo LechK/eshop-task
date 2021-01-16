@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const Box = styled.div`
   background-color: ${({ theme }) => theme.white};
   min-width: 310px;
-  margin: 0.8em;
+  margin: 2px 0.8em;
   border-radius: 5px;
   @media (min-width: 1061px) {
     min-width: 300px;
@@ -19,7 +19,7 @@ export const TrashBin = styled.img`
 `;
 
 export const Product = styled.div`
-  padding: 1em 0;
+  padding: 0.3em 0;
   position: relative;
   display: flex;
   flex-wrap: wrap;
