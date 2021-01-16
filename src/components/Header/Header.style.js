@@ -20,13 +20,14 @@ export const RightBlock = styled.div`
   width: 350px;
   box-sizing: border-box;
   display: flex;
-  justify-content: right;
+  justify-content: left;
   @media (min-width: 1061px) {
     &.mobile {
       display: none;
     }
   }
   @media (max-width: 1060px) {
+    justify-content: right;
     &.fullscreen {
       display: none;
     }

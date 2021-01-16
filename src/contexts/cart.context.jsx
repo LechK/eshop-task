@@ -6,12 +6,12 @@ export const CartProvider = ({ children }) => {
   const [products, setProducts] = useState({});
 
   const increase = useCallback(
-    (id) => {
+    (id, product) => {
       const newProducts = { ...products };
       if (newProducts[id]) {
         newProducts[id].quantity += 1;
       } else {
-        newProducts[id] = { quantity: 1 };
+        newProducts[id] = { ...product, quantity: 1 };
       }
       setProducts(newProducts);
     },
@@ -44,9 +44,22 @@ export const CartProvider = ({ children }) => {
     [products]
   );
 
+  const totalAmount = useCallback(() => {
+    return Object.keys(products).reduce((accelerator, id) => {
+      // console.log(accelerator, products[id]);
+      return accelerator + products[id].price * products[id].quantity;
+    }, 0);
+  }, [products]);
+
   return (
     <CartContext.Provider
-      value={{ products, increase, decrease, deleteProduct }}
+      value={{
+        products,
+        increase,
+        decrease,
+        deleteProduct,
+        totalAmount,
+      }}
     >
       {children}
     </CartContext.Provider>

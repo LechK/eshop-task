@@ -10,7 +10,7 @@ export const Cart = styled.div`
   display: flex;
   flex-direction: column;
   background-color: ${({ theme }) => theme.cartBackground};
-  min-height: 100vh;
+  min-height: calc(100vh - 180px);
   height: fit-content;
   padding-bottom: 0.5em;
 `;
