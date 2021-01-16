@@ -2,14 +2,40 @@ import React, { useState, useContext } from "react";
 import * as S from "./Header.style";
 import barbora from "../../assets/barbora.jpg";
 import { Link } from "react-router-dom";
+import productList from "../../utils/products";
 import { CartBox, SideBar, Cart, ProductInCart } from "../../components";
 import { CartContext } from "../../contexts/cart.context";
 
 function Header() {
   const [open, setOpen] = useState(false);
+  const { products, increase, decrease, deleteProduct } = useContext(
+    CartContext
+  );
 
-  const { products } = useContext(CartContext);
+  function renderProduct(id, productInCart) {
+    const product = productList.find((product) => {
+      return product.id === parseInt(id);
+    });
 
+    const price = product.price * productInCart.quantity;
+    return (
+      <ProductInCart
+        key={id}
+        name={product.name}
+        price={
+          price.toString().length < 3
+            ? `0,${price}`
+            : price.toString().replace(/\B(?=(\d{2})+(?!\d))/g, ",")
+        }
+        image={product.image}
+        value={productInCart.quantity}
+        handleChange={() => console.log("changed")}
+        handleDecrease={() => decrease(id)}
+        handleIncrease={() => increase(id)}
+        handleDelete={() => deleteProduct(id)}
+      />
+    );
+  }
   return (
     <S.Header>
       <S.Container>
@@ -31,7 +57,7 @@ function Header() {
         handleChange={() => setOpen(false)}
       >
         <Cart>
-          <ProductInCart />
+          {Object.keys(products).map((id) => renderProduct(id, products[id]))}
         </Cart>
       </SideBar>
     </S.Header>
