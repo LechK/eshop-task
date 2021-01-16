@@ -1,6 +1,5 @@
-import React, { useContext } from "react";
+import React from "react";
 import * as S from "./QuantityBlock.style";
-import { CartContext } from "../../contexts/cart.context";
 
 function QuantityBlock({
   value,
@@ -8,9 +7,6 @@ function QuantityBlock({
   handleIncrease,
   handleDecrease,
 }) {
-  const cart = useContext(CartContext);
-  console.log(cart.products);
-
   return (
     <S.InputBlock>
       <S.DecreaseButton onClick={handleDecrease}>-</S.DecreaseButton>

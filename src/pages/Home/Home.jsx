@@ -1,40 +1,30 @@
 import React, { useContext } from "react";
 import { Cart, Section, ProductBox, ProductInCart } from "../../components";
-import products from "../../utils/products";
+import productList from "../../utils/products";
 import * as S from "./Home.style";
 import { CartContext } from "../../contexts/cart.context";
 
 function Home() {
-  const cart = useContext(CartContext);
+  const { products, increase, decrease } = useContext(CartContext);
 
-  const cartItems = cart.products.map((item) => ({
-    value: item,
-    quantity: cart.products.filter((x) => x === item).length,
-  }));
+  function renderProduct(id, productInCart) {
+    const product = productList.find((product) => {
+      return product.id === parseInt(id);
+    });
 
-  const uniqueItems = cartItems.filter(
-    (item, index) =>
-      cartItems.findIndex((x) => x.value === item.value) === index
-  );
-
-  function findProduct(item) {
-    console.log(item);
-    const selectedProduct = products.find(
-      (product) => product.id === item.value
-    );
+    // console.log(productList);
+    // console.log(productInCart);
 
     return (
       <ProductInCart
-        key={item.value}
-        name={selectedProduct.name}
-        price={selectedProduct.price * item.quantity}
-        image={selectedProduct.image}
-        value={item.quantity}
-        handleChange={() => console.log("lolo")}
-        handleDecrease={() => console.log("yay")}
-        handleIncrease={() =>
-          cart.setProducts(cart.products.concat([item.value]))
-        }
+        key={id}
+        name={product.name}
+        price={product.price * productInCart.quantity}
+        image={product.image}
+        value={productInCart.quantity}
+        handleChange={() => console.log(products)}
+        handleDecrease={() => decrease(id)}
+        handleIncrease={() => increase(id)}
       />
     );
   }
@@ -44,8 +34,8 @@ function Home() {
       <S.Container>
         {/* where all products shows up, in leftblock */}
         <S.LeftBlock>
-          {products &&
-            products.map((product) => {
+          {productList &&
+            productList.map((product) => {
               return (
                 <ProductBox
                   key={product.id}
@@ -60,7 +50,7 @@ function Home() {
         {/* right block is for cart */}
         <S.RightBlock>
           <Cart>
-            {uniqueItems && uniqueItems.map((item) => findProduct(item))}
+            {Object.keys(products).map((id) => renderProduct(id, products[id]))}
           </Cart>
         </S.RightBlock>
       </S.Container>
