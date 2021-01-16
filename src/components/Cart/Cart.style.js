@@ -12,8 +12,7 @@ export const Cart = styled.div`
   background-color: ${({ theme }) => theme.cartBackground};
   min-height: 100vh;
   height: fit-content;
-  -webkit-box-shadow: 0px 1px 5px 1px ${({ theme }) => theme.lightGrey};
-  box-shadow: 0px 1px 5px 1px ${({ theme }) => theme.lightGrey};
+  padding-bottom: 0.5em;
 `;
 
 export const Heading = styled.p`

@@ -32,6 +32,7 @@ export const Product = styled.div`
 `;
 
 export const ButtonBlock = styled.div`
+  height: 38px;
   @media (max-width: 770px) {
     width: calc(100% - 100px);
     text-align: right;

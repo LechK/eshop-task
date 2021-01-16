@@ -19,11 +19,7 @@ function Home() {
       <ProductInCart
         key={id}
         name={product.name}
-        price={
-          price.toString().length < 3
-            ? `0,${price}`
-            : price.toString().replace(/\B(?=(\d{2})+(?!\d))/g, ",")
-        }
+        price={price.toFixed(2)}
         image={product.image}
         value={productInCart.quantity}
         handleChange={() => console.log("changed")}
