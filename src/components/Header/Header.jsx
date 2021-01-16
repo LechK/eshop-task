@@ -8,7 +8,7 @@ import { CartContext } from "../../contexts/cart.context";
 function Header() {
   const [open, setOpen] = useState(false);
 
-  const cart = useContext(CartContext);
+  const { products } = useContext(CartContext);
 
   return (
     <S.Header>
@@ -22,7 +22,7 @@ function Header() {
           <CartBox className="mobile" handleChange={() => setOpen(true)} />
         </S.RightBlock>
         <S.RightBlock className="fullscreen">
-          <CartBox counter={cart.products.length} />
+          <CartBox counter={Object.keys(products).length} />
         </S.RightBlock>
       </S.Container>
       <SideBar
