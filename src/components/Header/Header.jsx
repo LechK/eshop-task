@@ -14,6 +14,7 @@ function Header() {
     decrease,
     deleteProduct,
     totalAmount,
+    setQuantity,
   } = useContext(CartContext);
 
   function renderProduct(id, productInCart) {
@@ -21,19 +22,19 @@ function Header() {
       return product.id === parseInt(id);
     });
 
-    const price = product.price * productInCart.quantity;
+    function changeInputValue(quantity) {
+      setQuantity(quantity, id);
+    }
+
+    const price = (product.price * productInCart.quantity).toFixed(2);
     return (
       <ProductInCart
         key={id}
         name={product.name}
-        price={
-          price.toString().length < 3
-            ? `0,${price}`
-            : price.toString().replace(/\B(?=(\d{2})+(?!\d))/g, ",")
-        }
+        price={price}
         image={product.image}
         value={productInCart.quantity}
-        handleChange={() => console.log("changed")}
+        handleChange={(e) => changeInputValue(e.target.value)}
         handleDecrease={() => decrease(id)}
         handleIncrease={() => increase(id, product)}
         handleDelete={() => deleteProduct(id)}
