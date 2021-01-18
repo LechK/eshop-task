@@ -12,6 +12,7 @@ export const Box = styled.div`
 
 export const TrashBin = styled.img`
   max-height: 15px;
+  width: 15px;
   position: absolute;
   top: 1em;
   right: 1em;

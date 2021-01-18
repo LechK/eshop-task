@@ -13,6 +13,9 @@ export const Cart = styled.div`
   min-height: calc(100vh - 180px);
   height: fit-content;
   padding-bottom: 0.5em;
+  @media (max-width: 440px) {
+    min-height: calc(100vh - 102px);
+  }
 `;
 
 export const Heading = styled.p`

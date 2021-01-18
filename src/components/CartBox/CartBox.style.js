@@ -12,7 +12,8 @@ export const Box = styled.div`
   position: relative;
   @media (max-width: 1060px) {
     border: none;
-    justify-content: center;
+    width: 4em;
+    margin-left: auto;
     cursor: pointer;
   }
 `;

@@ -15,9 +15,9 @@ export const InputBlock = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-
   @media (max-width: 770px) {
     margin: 0;
+    margin-left: auto;
   }
 `;
 
